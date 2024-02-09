@@ -1,17 +1,17 @@
-fun main(args: Array<String>) {
-    if (args.isNotEmpty()) {
-        printInBox(args)
-    }
+fun main(args: String) {
+    printInBox(args)
 }
 
-fun printInBox(words: Array<String>) {
+fun printInBox(sentence: String) { 
+    val words = sentence.split(" ")
     val maxWordLength = words.maxOf { it.length }
     val boxWidth = maxWordLength + 4
     println("*".repeat(boxWidth))
 
     words.forEach { word ->
-        println("* ${word.padEnd(maxWordLength)} *") 
+        println("* ${word.padEnd(maxWordLength)} *")
     }
 
     println("*".repeat(boxWidth))
 }
+
